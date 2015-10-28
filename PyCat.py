@@ -1,19 +1,17 @@
 # A python implementation of the CAT Tool used in Linux
 # This can be massively improved+
 
-
 import sys
 from optparse import OptionParser
 
 DEVMODE = True
+# DEVMODE is a toggable constant variable, enable to turn on logging etc
 
-import logging
-# imports the loggign module, creates a logging file called "ProgramLog.txt"
-logging.basicConfig(filename='_ProgramLog.txt', level=logging.DEBUG,
-					format=' %(asctime)s - %(levelname)s- %(message)s')
-
-if DEVMODE == False:
-	logging.disable(logging.CRITICAL)
+if DEVMODE == True:
+	import logging
+	# imports the loggign module, creates a logging file called "ProgramLog.txt"
+	logging.basicConfig(filename='_ProgramLog.txt', level=logging.DEBUG,
+						format=' %(asctime)s - %(levelname)s- %(message)s')
 
 class CatCommand:
     logging.debug("at class cat command")
